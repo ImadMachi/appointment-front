@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import SettingsPage from "./Branch/SettingsPage";
+import Navbar from "./components/Navbar";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<SettingsPage />}>
+      test
+      {/* <Route path="contact" element={<Contact />} />
+      <Route
+        path="dashboard"
+        element={<Dashboard />}
+        loader={({ request }) =>
+          fetch("/api/dashboard.json", {
+            signal: request.signal,
+          })
+        }
+      />
+      <Route element={<AuthLayout />}>
+        <Route
+          path="login"
+          element={<Login />}
+          loader={redirectIfUser}
+        />
+        <Route path="logout" />
+      </Route> */}
+    </Route>
+  )
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <RouterProvider router={router} />
+    </>
   );
 }
 
