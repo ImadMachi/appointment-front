@@ -1,11 +1,31 @@
+import React from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Dashboard from "./Branch/Dashboard";
 import SettingsPage from "./Branch/SettingsPage";
 import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<SettingsPage />}>
-      test
+    <Route path="/">
+      <Route
+        path="dashboard"
+        element={
+          <>
+            <Navbar />
+            <Dashboard />
+          </>
+        }
+      />
+      <Route
+        path="settings"
+        element={
+          <>
+            <Navbar />
+            <SettingsPage />
+          </>
+        }
+      />
+
       {/* <Route path="contact" element={<Contact />} />
       <Route
         path="dashboard"
@@ -31,7 +51,6 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <Navbar />
       <RouterProvider router={router} />
     </>
   );

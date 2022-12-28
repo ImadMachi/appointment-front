@@ -1231,6 +1231,23 @@
   dependencies:
     prop-types "^15.8.1"
 
+"@fullcalendar/core@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.0.1.tgz#145f66c5b256927c2b93626c16183a3986b4c245"
+  integrity sha512-JMBRbWrez8hKhS1wvqAW3TBSo58/xRmDHUu07x/lywdct4gD7Z9QphC/VDNqbRQpTknHHmOjMqSmauEwQ6wbaA==
+  dependencies:
+    preact "^10.0.5"
+
+"@fullcalendar/daygrid@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.0.1.tgz#720a989ddeaa08fb4171abf7c69d7c60d3fb4e9a"
+  integrity sha512-QKbZZhJ2LCvHjc0E7bbos5kGRZJ024i0JliTr2H+0zgaSORHp4kzbk+w+XJpRc2v/DbGKMrlFSDVLKNE99BLSQ==
+
+"@fullcalendar/react@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.0.1.tgz#471d03d4b6d3e817ca8fa81b84177f5cc301f56c"
+  integrity sha512-BxM6CAdBQtFTdrsreksdkkD7WuJEdjyOeV9k8xG7z7OH72Pit6ZtQ90zdzkVXm1il/gvc+asPQpgyZvhuSVl6A==
+
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
@@ -7323,6 +7340,11 @@ postcss@^8.3.5, postcss@^8.4.18, postcss@^8.4.19, postcss@^8.4.4:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+preact@^10.0.5:
+  version "10.11.3"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.11.3.tgz#8a7e4ba19d3992c488b0785afcc0f8aa13c78d19"
+  integrity sha512-eY93IVpod/zG3uMF22Unl8h9KkrcKIRs2EGar8hwLZZDU1lkjph303V9HZBwufh2s736U6VXuhD109LYqPoffg==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
