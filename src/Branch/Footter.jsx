@@ -4,9 +4,9 @@ import {  faEnvelope, faHome, faPhone, faPrint } from '@fortawesome/free-solid-s
 import IconBox from '../components/IconBox';
 const Footter = () => {
 return( 
-  <div className="container z-index-1">
+  <div className="mx-4  z-index-1">
 
-    <footer className="text-white text-center text-lg-start bg-primary">
+    <footer className="text-white text-center text-lg-start bg-primary rounded-1">
  
     <div className="container p-4">
    
@@ -47,7 +47,7 @@ In public or a private company, a total of two-thirds of directors are appointed
             <li className="mb-3">
             <IconBox className="">
             <FontAwesomeIcon icon={faPhone} />
-          </IconBox><span className="ms-2">+ 01 234 567 88 567 88</span>
+          </IconBox><span className="ms-2">+ 01 789 567 88 567 88</span>
             </li>
             <li className="mb-3">
             <IconBox className="">
@@ -63,15 +63,27 @@ In public or a private company, a total of two-thirds of directors are appointed
           <table className="table text-center text-white">
             <tbody className="font-weight-normal corsur-pointer">
               <tr>
-                <td>Mon - Thu:</td>
-                <td>8am - 9pm</td>
+                <td>Monday : </td>
+                <td>8am - 7pm</td>
               </tr>
               <tr>
-                <td>Fri :</td>
+                <td>Tuesday : </td>
+                <td>8am - 7pm</td>
+              </tr>
+              <tr>
+                <td>Wednesday : </td>
+                <td>8am - 8pm</td>
+              </tr>
+              <tr>
+                <td>Thursday : </td>
+                <td>8am - 8pm</td>
+              </tr>
+              <tr>
+                <td>Friday :</td>
                 <td>8am - 12am</td>
               </tr>
               <tr>
-                <td>Sat :</td>
+                <td>Saturday :</td>
                 <td>8am - 3am</td>
               </tr>
               <tr>
