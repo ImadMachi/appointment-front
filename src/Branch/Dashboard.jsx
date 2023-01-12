@@ -2,12 +2,46 @@ import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { Container } from "react-bootstrap";
+import AppointmentModal from "./AppointmentModal";
 
 const Dashboard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedAppointment, setselectedAppointment] = useState({ extendedProps: {} });
   const [events, setEvents] = useState([
-    { title: "Appointment 1", start: "2022-12-10", text: "test", extendedProps: { description: "test" } },
-    { title: "Appointment 2", start: "2022-12-01" },
-    { title: "Appointment 3", start: "2022-01-10" },
+    {
+      title: "Appointment 1",
+      start: "2023-01-12",
+      text: "test",
+      extendedProps: {
+        id: "#D245874",
+        customer: "Imad Machi",
+        phone: "+212 628-221955",
+        email: "imadoxmachi@gmail.com",
+        status: "Upcoming",
+      },
+    },
+    {
+      title: "Appointment 2",
+      start: "2023-01-10",
+      extendedProps: {
+        id: "#D245875",
+        customer: "Imad Machi",
+        phone: "+212 628-221955",
+        email: "imadoxmachi@gmail.com",
+        status: "Upcoming",
+      },
+    },
+    {
+      title: "Appointment 3",
+      start: "2023-01-01",
+      extendedProps: {
+        id: "#D245876",
+        customer: "Imad Machi",
+        phone: "+212 628-221955",
+        email: "imadoxmachi@gmail.com",
+        status: "Upcoming",
+      },
+    },
   ]);
 
   const handleDateClick = (arg) => {
@@ -15,8 +49,8 @@ const Dashboard = () => {
   };
 
   const handleEventClick = (info) => {
-    // display a pop-up with the event title
-    alert(info.event.extendedProps.description);
+    setselectedAppointment(info.event);
+    setIsModalOpen(true);
   };
 
   return (
@@ -28,6 +62,7 @@ const Dashboard = () => {
         dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
+      {<AppointmentModal appointment={selectedAppointment} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
     </Container>
   );
 };
