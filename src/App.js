@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import Dashboard from "./Branch/Dashboard";
+import Index from "./Branch/Index";
 import SettingsPage from "./Branch/SettingsPage";
 import Navbar from "./components/Navbar";
 
@@ -16,6 +17,16 @@ const router = createBrowserRouter(
           </>
         }
       />
+       
+       <Route
+        path=""
+        element={
+          <>
+           <Index/>
+          </>
+        }
+      />
+    
       <Route
         path="settings"
         element={
@@ -25,6 +36,7 @@ const router = createBrowserRouter(
           </>
         }
       />
+      
 
       {/* <Route path="contact" element={<Contact />} />
       <Route
@@ -45,6 +57,7 @@ const router = createBrowserRouter(
         <Route path="logout" />
       </Route> */}
     </Route>
+     
   )
 );
 
