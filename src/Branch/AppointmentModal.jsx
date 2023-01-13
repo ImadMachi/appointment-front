@@ -1,4 +1,4 @@
-import { Alert, Badge, Col, Modal, Row } from "react-bootstrap";
+import { Badge, Col, Modal, Row } from "react-bootstrap";
 import { createPortal } from "react-dom";
 
 const AppointmentModal = ({ isModalOpen, setIsModalOpen, appointment }) => {

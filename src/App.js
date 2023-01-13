@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Dashboard from "./Branch/Dashboard";
 import Index from "./Branch/Index";
 import SettingsPage from "./Branch/SettingsPage";
+import ClientPage from "./Client/ClientPage";
 import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter(
@@ -17,16 +18,16 @@ const router = createBrowserRouter(
           </>
         }
       />
-       
-       <Route
+
+      <Route
         path=""
         element={
           <>
-           <Index/>
+            <Index />
           </>
         }
       />
-    
+
       <Route
         path="settings"
         element={
@@ -36,7 +37,15 @@ const router = createBrowserRouter(
           </>
         }
       />
-      
+
+      <Route
+        path="client"
+        element={
+          <>
+            <ClientPage />
+          </>
+        }
+      />
 
       {/* <Route path="contact" element={<Contact />} />
       <Route
@@ -57,7 +66,6 @@ const router = createBrowserRouter(
         <Route path="logout" />
       </Route> */}
     </Route>
-     
   )
 );
 
