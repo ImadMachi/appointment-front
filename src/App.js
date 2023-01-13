@@ -1,5 +1,7 @@
 import React from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import ClientCalendar from "./Branch/ClientCalendar";
+import CreateAccount from "./Branch/CreateAccount";
 import Dashboard from "./Branch/Dashboard";
 import Index from "./Branch/Index";
 import SettingsPage from "./Branch/SettingsPage";
@@ -26,6 +28,16 @@ const router = createBrowserRouter(
           </>
         }
       />
+        <Route
+        path="createaccount"
+
+        element={
+      
+           <CreateAccount/>
+           
+          
+        }
+      />
     
       <Route
         path="settings"
@@ -33,6 +45,15 @@ const router = createBrowserRouter(
           <>
             <Navbar />
             <SettingsPage />
+          </>
+        }
+      />
+
+<Route
+        path="client/appointement"
+        element={
+          <>
+           <ClientCalendar/>
           </>
         }
       />
