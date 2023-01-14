@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Modal, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IconBox from "../components/IconBox";
 import Service from "../components/Service";
 import ManageTecnicien from "../components/ManageTecnicien";
+import axios from "axios";
+import moment from "moment";
 
 
 
@@ -130,18 +132,43 @@ function WorkingHours(){
   );
 }
 
+
 function BasicExample() {
+  let [results, setResults] =useState([])
+
+  useEffect(() => {
+   const getSuccurcale = () => {
+   
+    axios
+    .get("http://127.0.0.1:8000/api/get-succurcale/1")
+    .then(data =>{  
+      setResults(data.data); 
+      
+   
+  }
+  ) 
+      
+    .catch(error => console.log(error));
+    } 
+    getSuccurcale()
+  
+   }
+    
+   ,[])
+   
+   
+   
   return (
     <Form className="shadow-lg px-4 py-4" >
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Branch Name" />
+        <Form.Control type="text" value={results.name}  placeholder="Branch Name" />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBsicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="Branch Name" />
       </Form.Group>
@@ -153,6 +180,19 @@ function BasicExample() {
       <Form.Group className="mb-3" controlId="formBasicRole">
         <Form.Label>Role</Form.Label>
         <Form.Control type="text" placeholder="Admine" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasRole">
+        <Form.Label>address</Form.Label>
+        <Form.Control type="text" placeholder="" value={results.address} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicole">
+        <Form.Label>created At :</Form.Label>
+        <Form.Control type="date" placeholder="" value={results.created_at} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicole">
+        <Form.Label>updated At :</Form.Label>
+       
+        <Form.Control type="date" placeholder=""  className="input"value={results.updated_at} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />

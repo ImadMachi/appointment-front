@@ -4,10 +4,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import IconBox from '../components/IconBox';
 import {Link} from "react-router-dom"; 
+import CreateAccount from './CreateAccount';
+import { useState } from 'react';
 
 
 
 function AppointementCardd() {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
   return (
     <div className='m-2 p-3'>
     <Card >
@@ -22,9 +26,11 @@ function AppointementCardd() {
         <Link className=" btn btn-primary  m-5 p-2" to='/dashboard'> <IconBox className="m-3">
             <FontAwesomeIcon icon={faEdit} />
           </IconBox>Keep track of my appointments</Link>
-          <Link className="btn btn-primary button p-2" to='/createaccount'> <IconBox className="m-3">
+        
+          <Link className="btn btn-primary button p-2"  onClick={handleShow} to="createAccount"> <IconBox className="m-3">
             <FontAwesomeIcon icon={faCalendar} />
           </IconBox>make an appointment</Link>
+          
           </div>
           <img src="images/TaeAugust11.jpg" alt="appointement" height={350} className="m-3" />
           </div>

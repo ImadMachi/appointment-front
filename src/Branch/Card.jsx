@@ -8,6 +8,7 @@ import {
   MDBBtn,
   MDBRipple
 } from 'mdb-react-ui-kit';
+import { Button } from 'react-bootstrap';
 
 export default function Cardd() {
   return (
@@ -40,7 +41,7 @@ export default function Cardd() {
   Analytical Abilities. ...
 
           </MDBCardText>
-          <MDBBtn href='#'>Contact</MDBBtn>
+          <Button className='btn' href='#'>Contact</Button>
         </MDBCardBody>
         
       </MDBCard>
@@ -65,7 +66,7 @@ function Cardd2() {
   Creativity. ...
   Project Management. ...
           </MDBCardText>
-          <MDBBtn href='#'>Contact</MDBBtn>
+          <Button className='btn' href='#'>Contact</Button>
         </MDBCardBody>
       </MDBCard>
     );
@@ -89,7 +90,7 @@ Analytical Abilities. ...
 Creativity. ...
 Project Management. ...
         </MDBCardText>
-        <MDBBtn href='#'>Contact</MDBBtn>
+        <Button className='btn' href='#'>Contact</Button>
       </MDBCardBody>
     </MDBCard>
   );
@@ -113,7 +114,7 @@ function Cardd4() {
   Analytical Abilities. ...
 
           </MDBCardText>
-          <MDBBtn href='#'>Contact</MDBBtn>
+          <Button className='btn' href='#'>Contact</Button>
         </MDBCardBody>
       </MDBCard>
     );
