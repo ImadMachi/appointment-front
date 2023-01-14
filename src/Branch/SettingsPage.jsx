@@ -32,7 +32,7 @@ const SettingsPage = () => {
               <h2 className="mb-0">John Doe</h2>
               <h5 className="text-muted fw-normal mt-0">Admin</h5>
             </div>
-            <ul className="d-flex flex-column mt-5">
+            <ul className="d-flex flex-column mt-5 ">
               {settings.map((setting) => (
                 <li
                   key={setting.id}
@@ -63,7 +63,7 @@ function WorkingHours(){
 
 
   return (
-<div className="px-4 py-4 shadow-sm">
+<div className="px-4 py-4 shadow-sm ">
   <Popupmodifier show={show} setShow={setShow} />
   <div className="d-flex justify-content-between" >
   <h3>Heures de travail</h3>
@@ -148,11 +148,11 @@ function BasicExample() {
 
       <Form.Group className="mb-3" controlId="formBasicNumber">
         <Form.Label>Phone</Form.Label>
-        <Form.Control type="number" placeholder="+212 612-658745" />
+        <Form.Control type="text" placeholder="+212 612-658745" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicRole">
         <Form.Label>Role</Form.Label>
-        <Form.Control type="number" placeholder="Admine" />
+        <Form.Control type="text" placeholder="Admine" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
@@ -177,6 +177,7 @@ function Popupmodifier( {show ,setShow}){
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className="d-inline-block"
       >
         <Modal.Header closeButton>
           <Modal.Title>Modifier les heures de travail</Modal.Title>
@@ -184,9 +185,9 @@ function Popupmodifier( {show ,setShow}){
         <Modal.Body>
         <div>
           <div className="d-flex justify-content-between py-2">
-          <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5>Dimanche</h5>
+          <div className="d-flex text-center">
+           <input type="checkbox"className="btn-lg form-check-input mx-2 " />
+            <h5>Mon</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>
@@ -217,9 +218,9 @@ function Popupmodifier( {show ,setShow}){
           </div>
 
           <div className="d-flex justify-content-between py-2 ">
-          <div className="d-flex ">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5 className=""> Lundi  </h5>
+          <div className="d-flex  ">
+           <input type="checkbox"className="btn-lg form-check-input mx-2" />
+            <h5 className=""> Tues  </h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De" className="">
     <option value="dog">9:00</option>
@@ -251,8 +252,8 @@ function Popupmodifier( {show ,setShow}){
 
           <div className="d-flex justify-content-between py-2">
           <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input " />
-            <h5>Mardi</h5>
+           <input type="checkbox"className="btn-lg form-check-input  mx-2" />
+            <h5>Wed</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>
@@ -284,8 +285,8 @@ function Popupmodifier( {show ,setShow}){
 
           <div className="d-flex justify-content-between py-2">
           <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5>Mercredi</h5>
+           <input type="checkbox"className="btn-lg form-check-input mx-2" />
+            <h5>Thur</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>
@@ -317,8 +318,8 @@ function Popupmodifier( {show ,setShow}){
 
           <div className="d-flex justify-content-between py-2">
           <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5>Jeudi</h5>
+           <input type="checkbox"className="btn-lg form-check-input mx-2" />
+            <h5>Frida</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>
@@ -349,8 +350,8 @@ function Popupmodifier( {show ,setShow}){
           </div>
           <div className="d-flex justify-content-between py-2">
           <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5>Vendredi</h5>
+           <input type="checkbox"className="btn-lg form-check-input mx-2" />
+            <h5>Satur</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>
@@ -381,8 +382,8 @@ function Popupmodifier( {show ,setShow}){
           </div>
           <div className="d-flex justify-content-between py-2">
           <div className="d-flex">
-           <input type="checkbox"className="btn-lg form-check-input" />
-            <h5>Samedi</h5>
+           <input type="checkbox"className="btn-lg form-check-input mx-2" />
+            <h5>Sund</h5>
             </div>
           <select name="pets" id="pet-select" placeholder="De">
     <option value="dog">9:00</option>

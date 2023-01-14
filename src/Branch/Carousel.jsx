@@ -10,11 +10,6 @@ function Caroussel() {
     {
       image: "images/TaeAugust11.jpg",
       caption: "all service"
-    }
-    ,
-    {
-      image: "images/Wavy_Bus-02_Single-09.jpg",
-      caption: "all in the right time"
     },
     {
       image: "images/3914478.jpg",
@@ -34,7 +29,7 @@ function Caroussel() {
   return (
     <div className="App">
       <div style={{ textAlign: "center" }}>
-        <h2 className="my-3 text-blue">Make Your Appointement easely with us :</h2>
+        <h2 className="my-3 text-blue">Make Your Appointement easely with US :</h2>
         
         <div style={{
           padding: "20px 20px"
@@ -42,8 +37,8 @@ function Caroussel() {
           <Carousel
             data={data}
             time={2000}
-            width="98%"
-            height="700px"
+            width="99%"
+            height="550px"
             captionStyle={captionStyle}
             radius="10px"
             slideNumber={true}

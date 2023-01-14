@@ -1,5 +1,7 @@
 import React from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import ClientCalendar from "./Branch/ClientCalendar";
+import CreateAccount from "./Branch/CreateAccount";
 import Dashboard from "./Branch/Dashboard";
 import Index from "./Branch/Index";
 import SettingsPage from "./Branch/SettingsPage";
@@ -18,16 +20,26 @@ const router = createBrowserRouter(
           </>
         }
       />
-
-      <Route
+       
+       <Route
         path=""
         element={
           <>
-            <Index />
+           <Index/>
           </>
         }
       />
+        <Route
+        path="createaccount"
 
+        element={
+      
+           <CreateAccount/>
+           
+          
+        }
+      />
+    
       <Route
         path="settings"
         element={
@@ -38,16 +50,18 @@ const router = createBrowserRouter(
         }
       />
 
-      <Route
+
+<Route
         path="client"
         element={
           <>
-            <ClientPage />
+           <ClientPage/>
           </>
         }
       />
-
-      {/* <Route path="contact" element={<Contact />} />
+      
+  {/*
+     <Route path="contact" element={<Contact />} />
       <Route
         path="dashboard"
         element={<Dashboard />}

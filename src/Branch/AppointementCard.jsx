@@ -22,7 +22,7 @@ function AppointementCardd() {
         <Link className=" btn btn-primary  m-5 p-2" to='/dashboard'> <IconBox className="m-3">
             <FontAwesomeIcon icon={faEdit} />
           </IconBox>Keep track of my appointments</Link>
-          <Link className="btn btn-primary button p-2"> <IconBox className="m-3">
+          <Link className="btn btn-primary button p-2" to='/createaccount'> <IconBox className="m-3">
             <FontAwesomeIcon icon={faCalendar} />
           </IconBox>make an appointment</Link>
           </div>
