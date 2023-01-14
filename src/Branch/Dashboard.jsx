@@ -1,52 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { Container } from "react-bootstrap";
 import AppointmentModal from "./AppointmentModal";
+import axios from "axios";
 
 const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAppointment, setselectedAppointment] = useState({ extendedProps: {} });
-  const [events, setEvents] = useState([
-    {
-      title: "Appointment 1",
-      start: "2023-01-12",
-      text: "test",
-      extendedProps: {
-        id: "#D245874",
-        customer: "Imad Machi",
-        phone: "+212 628-221955",
-        email: "imadoxmachi@gmail.com",
-        status: "Upcoming",
-      },
-    },
-    {
-      title: "Appointment 2",
-      start: "2023-01-10",
-      extendedProps: {
-        id: "#D245875",
-        customer: "Imad Machi",
-        phone: "+212 628-221955",
-        email: "imadoxmachi@gmail.com",
-        status: "Upcoming",
-      },
-    },
-    {
-      title: "Appointment 3",
-      start: "2023-01-01",
-      extendedProps: {
-        id: "#D245876",
-        customer: "Imad Machi",
-        phone: "+212 628-221955",
-        email: "imadoxmachi@gmail.com",
-        status: "Upcoming",
-      },
-    },
-  ]);
+  const [events, setEvents] = useState({ extendedProps: {} });
 
-  const handleDateClick = (arg) => {
-    setEvents([...events, { title: "New Appointment", start: arg.dateStr }]);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get("/api/list-appointment");
+        setEvents(
+          result.data.map((appointment) => ({
+            title: appointment.name,
+            start: appointment.appointment_date,
+            text: appointment.name,
+            extendedProps: {
+              id: appointment.id,
+              customer: "John Doe",
+              phone: "+212 628-221955",
+              email: "johndoe@gmail.com",
+              status: appointment.status,
+            },
+          }))
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleEventClick = (info) => {
     setselectedAppointment(info.event);
@@ -59,7 +46,7 @@ const Dashboard = () => {
         defaultView="dayGridMonth"
         plugins={[dayGridPlugin]}
         events={events}
-        dateClick={handleDateClick}
+        // dateClick={handleDateClick}
         eventClick={handleEventClick}
       />
       {<AppointmentModal appointment={selectedAppointment} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
