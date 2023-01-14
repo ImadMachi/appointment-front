@@ -5,6 +5,7 @@ import CreateAccount from "./Branch/CreateAccount";
 import Dashboard from "./Branch/Dashboard";
 import Index from "./Branch/Index";
 import SettingsPage from "./Branch/SettingsPage";
+import ClientPage from "./Client/ClientPage";
 import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter(
@@ -49,17 +50,18 @@ const router = createBrowserRouter(
         }
       />
 
+
 <Route
-        path="client/appointement"
+        path="client"
         element={
           <>
-           <ClientCalendar/>
+           <ClientPage/>
           </>
         }
       />
       
-
-      {/* <Route path="contact" element={<Contact />} />
+  {/*
+     <Route path="contact" element={<Contact />} />
       <Route
         path="dashboard"
         element={<Dashboard />}
@@ -78,7 +80,6 @@ const router = createBrowserRouter(
         <Route path="logout" />
       </Route> */}
     </Route>
-     
   )
 );
 

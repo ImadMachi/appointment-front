@@ -32,7 +32,7 @@ const SettingsPage = () => {
               <h2 className="mb-0">John Doe</h2>
               <h5 className="text-muted fw-normal mt-0">Admin</h5>
             </div>
-            <ul className="d-flex flex-column mt-5">
+            <ul className="d-flex flex-column mt-5 ">
               {settings.map((setting) => (
                 <li
                   key={setting.id}

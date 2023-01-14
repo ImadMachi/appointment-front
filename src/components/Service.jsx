@@ -1,7 +1,8 @@
 
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
+import { MDBBtn } from "mdb-react-ui-kit";
+
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import IconBox from "./IconBox";
@@ -22,23 +23,13 @@ const handleShow = () => setShow(true);
       <PopupAdd show={show} setShow={setShow} />
         <form action="">
             <div className=" d-flex-row justify-content-between text-center">
-            <MDBBtn outline rounded className='mx-2 my-3' color='danger'>
-            appointment to get vaccinated against covid 19
-      </MDBBtn>
-      <MDBBtn outline rounded className='mx-2 my-3' color='warning'>
-      appointment to change glasses      </MDBBtn>
-
-      <MDBBtn outline rounded className='mx-2 my-3' color='info'>
-      appointment to see the doctor
-      </MDBBtn>
-      <MDBBtn outline rounded className='mx-2 my-3' color='danger'>
-      appointment to change driver licence      </MDBBtn>
-
-      <MDBBtn outline rounded className='mx-2 my-3' color='warning'>
-      appointment to change the business card
-      </MDBBtn>
-      <MDBBtn outline rounded className='mx-2 my-3' color='info'>
-      appointment to change the national cards      </MDBBtn>
+      
+      <button type="button" class="btn btn-outline-danger mx-2 my-3"> appointment to get vaccinated against covid 19</button>
+      <button type="button" class="btn btn-outline-warning mx-2 my-3">appointment to change glasses</button>
+      <button type="button" class="btn btn-outline-info mx-2 my-3"> appointment to see the doctor</button>
+      <button type="button" class="btn btn-outline-danger mx-2 my-3">appointment to change driver licence</button>
+      <button type="button" class="btn btn-outline-warning mx-2 my-3">  appointment to change the business card</button>
+      <button type="button" class="btn btn-outline-info mx-2 my-3">appointment to change the national cards</button>
   </div>
   <div className="Row">
     <div className="col text-center">
