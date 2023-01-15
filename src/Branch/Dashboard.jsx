@@ -16,14 +16,13 @@ const Dashboard = () => {
         const result = await axios.get("/api/list-appointment");
         setEvents(
           result.data.map((appointment) => ({
-            title: appointment.name,
+            title: appointment.service.name,
             start: appointment.appointment_date,
-            text: appointment.name,
             extendedProps: {
               id: appointment.id,
-              customer: "John Doe",
-              phone: "+212 628-221955",
-              email: "johndoe@gmail.com",
+              customer: appointment.client.name,
+              phone: appointment.client.phone,
+              email: appointment.client.email,
               status: appointment.status,
             },
           }))

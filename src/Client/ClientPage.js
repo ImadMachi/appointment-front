@@ -22,6 +22,7 @@ const ClientPage = () => {
     };
     fetchData();
   }, []);
+
   const handleBookAppointment = async () => {
     try {
       const result = await axios.post("/api/create-appointment", {
