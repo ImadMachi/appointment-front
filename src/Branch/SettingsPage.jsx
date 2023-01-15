@@ -8,7 +8,6 @@ import IconBox from "../components/IconBox";
 import Service from "../components/Service";
 import ManageTecnicien from "../components/ManageTecnicien";
 import axios from "axios";
-import moment from "moment";
 
 const SettingsPage = () => {
   const [selectedSetting, setSelectedSetting] = useState(1);
@@ -127,6 +126,8 @@ function BasicExample() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -141,6 +142,24 @@ function BasicExample() {
     };
     fetchData();
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await axios.put("/api/update-succurcale/1", {
+        name,
+        phone,
+        address,
+      });
+      if (result.status === 201) {
+        setSuccess(true);
+        setError(false);
+        console.log(result);
+      }
+    } catch (error) {
+      setError(true);
+    }
+  };
   return (
     <Form className="shadow-lg px-4 py-4">
       <Form.Group className="mb-3" controlId="formBasicTExt">
@@ -158,9 +177,16 @@ function BasicExample() {
         <Form.Control type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
         Update
       </Button>
+      {success ? (
+        <div className="alert alert-success text-center mt-2">Updated!</div>
+      ) : error ? (
+        <div className="alert alert-danger text-center mt-2">Something went wrong</div>
+      ) : (
+        <></>
+      )}
     </Form>
   );
 }
