@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -9,18 +10,37 @@ function ManageTecnicien() {
    const listTechnicien=['hicham chakir','imad maachi ','Yassine Echamkh ','Achraf']
    const [show, setShow] = useState(false);
    const handleShow = () => setShow(true);
+   let [results, setResults] =useState([])
+
+   useEffect(() =>{
+   const getPostsData = () => {
+    
+    axios
+    .get("http://127.0.0.1:8000/api/list-services")
+    .then(data =>{  
+      setResults(data.data); 
+    
+   
+  }
+      )
+    .catch(error => console.log(error));
+    };
+     getPostsData()
+  }
+    , [])
   return (
+
     <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
+   
+      {results.map((tech ,idx) => (
         <Col>
           <Card>
             <Card.Img  className='rounded'src="https://i.pravatar.cc/200"  height="100"/>
             <Card.Body onClick={handleShow}>
-              <Card.Title>{listTechnicien[idx]}</Card.Title>
+              
+              <Card.Title>{tech.name  }</Card.Title>
               <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+               {tech.description}
               </Card.Text>
               
             </Card.Body>

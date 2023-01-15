@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 
 export default function CreateAccount() {
   const [show, setShow] = useState(true);
-  const [shown, setShown] = useState(false);
   const handleClose = () => setShow(false);
  
 
 
   return (
-    <>
+   
 
 
       <Modal show={show} onHide={handleClose}  className=" py-2 px-3">
@@ -91,7 +91,7 @@ sitekey="6LcnG_IjAAAAAFq4ZOCsF2i1JnUopeaQ1icL0MJV"
 />
         </Modal.Body>
         <Modal.Footer className='text-center'>
-          <Link variant="secondary" className='btn btn-danger' to="/">
+          <Link variant="secondary" className='btn btn-danger'  to="/" onClick={handleClose}>
             Close
           </Link>
           <Link className=" btn btn-primary mx-3" to="/dashboard" >
@@ -99,6 +99,6 @@ sitekey="6LcnG_IjAAAAAFq4ZOCsF2i1JnUopeaQ1icL0MJV"
           </Link>
         </Modal.Footer>
       </Modal>
-    </>
+ 
   );
 }

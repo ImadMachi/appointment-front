@@ -8,6 +8,7 @@ import IconBox from "../components/IconBox";
 import Service from "../components/Service";
 import ManageTecnicien from "../components/ManageTecnicien";
 import axios from "axios";
+import moment from "moment";
 
 const SettingsPage = () => {
   const [selectedSetting, setSelectedSetting] = useState(1);
